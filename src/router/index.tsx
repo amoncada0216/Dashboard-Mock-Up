@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import MainLayout from "../layout/MainLayout";
 import Homepage from "@/pages/Homepage";
 import Users from "@/pages/Users";
-import Page from "@/pages/users/page";
+import Admin from "@/pages/users/Admin";
 
 export const router = createBrowserRouter([
   {
@@ -14,7 +14,7 @@ export const router = createBrowserRouter([
         path: "users",
         children: [
           { index: true, element: <Users /> }, 
-          { path: "page", element: <Page /> },
+          { path: "page", element: <Admin /> },
         ],
       },
     ],

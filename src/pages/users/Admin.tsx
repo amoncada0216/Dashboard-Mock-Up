@@ -18,8 +18,10 @@ import { Sheet, SheetTrigger } from "@/components/ui/sheet";
 import CardList from "@/components/CardList";
 import { Button } from "@/components/ui/button";
 import EditUser from "@/components/EditUser";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import AppLineChart from "@/components/AppLineChart";
 
-const page = () => {
+const admin = () => {
   return (
     <div className="flex-1 min-h-0 p-3">
       <Breadcrumb>
@@ -112,7 +114,7 @@ const page = () => {
                 <SheetTrigger asChild>
                   <Button>Edit User</Button>
                 </SheetTrigger>
-                <EditUser/>
+                <EditUser />
               </Sheet>
             </div>
             <div className="space-y-4 mt-4">
@@ -155,13 +157,31 @@ const page = () => {
         {/* RIGHT */}
         <div className="w-full xl:w-2/3 space-y-4">
           {/* USER CARD */}
-          <div className="bg-primary-foreground p-4 rounded-lg">User Card</div>
+          <div className="bg-primary-foreground p-4 rounded-lg space-y-2">
+            <div className="flex items-center gap-2">
+              <Avatar className="size-12">
+                <AvatarImage src="../../../../avatar.png" />
+                <AvatarFallback>AM</AvatarFallback>
+              </Avatar>
+
+              <h1 className="text-xl font-semibold">Abraham Moncada</h1>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Nisi nisi mollit magna aliqua occaecat. Aute esse aute tempor
+              consectetur fugiat excepteur adipisicing officia aute aliquip
+              tempor. Nisi nisi mollit magna aliqua occaecat. Aute esse aute
+              tempor consectetur fugiat excepteur adipisicing officia aute
+              aliquip tempor.
+            </p>
+          </div>
           {/* CHART */}
-          <div className="bg-primary-foreground p-4 rounded-lg">Chart</div>
+          <div className="bg-primary-foreground p-4 rounded-lg">
+            <AppLineChart />
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default page;
+export default admin;
